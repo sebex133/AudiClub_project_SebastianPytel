@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'MontserratAudi';
+    font-style: normal;
+    src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'MuliAudi';
+    font-style: normal;
+    src: url('fonts/Muli-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'ParisienneAudi';
+    font-style: normal;
+    src: url('fonts/Parisienne-Regular.ttf') format('truetype');
+}

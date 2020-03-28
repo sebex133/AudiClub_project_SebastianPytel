@@ -1,0 +1,516 @@
+*,:before,:after{
+    margin:0;
+    box-sizing:border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body{
+    background-color: black;
+}
+
+.logo{
+    padding-top: 20px;
+}
+
+.sr-only{
+    display: none;
+}
+
+.logo h1{
+    -ms-grid-column: 2;
+    text-align: center;
+
+    font-family: "MontserratAudi", sans-serif;
+    font-weight: 300;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5px;
+}
+
+.logo h1 .by{
+    font-style: italic;
+}
+
+
+.audi-logo{
+    display: grid;
+    display: -ms-grid;
+    -ms-grid-columns: 30px 146px 30px;
+    text-align: center;
+}
+
+.audi-logo:first-child{
+    -ms-grid-column: 1;
+}
+
+.audi-logo:last-child{
+    -ms-grid-column: 3;
+}
+
+.audi-logo img{
+    -ms-grid-column: 2;
+}
+
+.love{
+    color: red;
+    opacity: 0;
+    padding: 4px 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.love:first-child{
+    -ms-grid-column: 1;
+}
+
+.love:last-child{
+    -ms-grid-column: 3;
+}
+
+@media screen and (max-width: 1199px){
+    .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .audi-logo{
+        grid-template-columns: 1fr 250px 1fr;
+    }
+
+    .love{
+        display: flex;
+        align-items: center;
+        font-size: 4em;
+    }
+    .love:first-child{
+        justify-content: flex-end;
+    }
+    .love:last-child{
+        justify-content: flex-start;
+    }
+
+    .logo h1{
+        font-size: 5em;
+    }
+
+    .audi-logo:last-child{
+        display: none;
+    }
+
+    .main-menu.desktop{
+        display: none;
+    }
+
+    .main-menu li:first-child{
+        border-radius: 5px 5px 0 0;
+    }
+
+    .main-menu li:last-child{
+        border-radius: 0 0 5px 5px;
+    }
+
+    .check-audis{
+        font-size: 3em;
+    }
+
+    article{
+        padding: 70px 0;
+    }
+    
+    .audi-model{
+        padding: 10px 0;
+        font-family: "MontserratAudi", serif;
+        font-weight: 300;
+        font-size: 3em;
+    }
+
+    .main-menu h3 a{
+        font-size: 2.5em;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .logo{
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: 200px 1fr 200px;
+        -ms-grid-columns: 200px 1fr 200px;
+    
+        background-color: black;
+    }
+
+    .audi-logo{        
+        grid-template-columns: 30px 146px 30px;
+    }
+
+    .logo h1{
+        font-size: 32px;
+    }
+
+    .main-menu.mobile{
+        display: none;
+    }
+    
+    .main-menu li:first-child{
+        border-radius: 5px 0 0 5px;
+    }
+
+    .main-menu li:last-child{
+        border-radius: 0 5px 5px 0;
+    }
+
+    .check-audis{
+        font-size: 21px;
+    }
+
+    article{
+        padding: 20px 0;
+    }
+    
+    .audi-model{
+        padding: 10px 0;
+        font-family: "MontserratAudi", serif;
+        font-weight: 300;
+        font-size: 29px;
+    }
+
+    .main-menu h3 a{
+        font-size: 19px;
+    }
+}
+
+.main-menu ul{
+    padding: 0;
+}
+
+.main-menu.mobile ul{
+    display: none;
+    list-style-type: none;
+}
+
+.main-menu.desktop ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.5px solid rgba(255,255,255,0.2);
+    border-bottom: 0.5px solid rgba(255,255,255,0.2);
+}
+
+.main-menu.mobile li{
+    padding: 1.3em 0;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-menu.mobile li:not(:last-child){       
+    border-bottom: 2px solid rgba(255,0,0,0.3);
+}
+
+.main-menu.desktop li{
+    min-height: 40px;
+    padding: 0px 20px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-menu.desktop a{
+    position: relative;
+}
+
+.main-menu.desktop a:before{
+    transition: color 0.5s ease-in-out;
+    color: transparent;
+    font-size: 12px;
+    position: absolute;
+    top: 4px;
+}
+
+.main-menu.desktop a:before{
+    content: "⭕";
+    left: -15px;
+}
+
+.main-menu.desktop a:hover:before{
+    color: rgba(197, 197, 197, 0.5);
+}
+
+.hamburger-wrapper{
+    padding: 25px 0 35px 0;
+    text-align: center;
+}
+
+.hamburger-wrapper button{
+    touch-action: manipulation;
+    
+    border: 4px solid white;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 0 10px 17px 10px;
+}
+
+.hamburger-wrapper button:hover{
+    border: 4px solid black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.hamburger-wrapper button:hover div{
+    border-bottom: 4px solid #000;
+}
+
+.hamburger-wrapper button div{
+    width: 60px;
+    height: 20px;
+    border-bottom: 4px solid #fff;
+}
+
+.main-menu h3 a{
+    font-family: "MuliAudi", serif;
+    font-weight: 300;
+    color: #c5c5c5;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h2{
+    font-family: "MontserratAudi";
+    font-weight: 300;
+    color: white;
+    text-align: center;
+}
+
+.check-audis-wrapper{
+    min-height: 42px;
+}
+
+.check-audis{
+    display: none;
+    text-align: center;
+    font-family: "ParisienneAudi", sans-serif;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    padding: 4px 0 10px 0px;
+}
+
+p{
+    font-family: "MuliAudi", serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+.image{
+    margin: 20px 0;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(92,92,92,1) 12%, rgba(105,105,105,1) 25%, rgba(74,74,74,1) 36%, rgba(0,0,0,1) 51%, rgba(18,18,18,1) 60%, rgba(43,43,43,1) 75%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(18,18,18,1) 91%, rgba(0,0,0,1) 100%);
+}
+
+.newsletter{
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 20px;
+    font-family: Verdana;
+}
+
+.newsletter h3{
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 20px;
+    font-family: "MontserratAudi", serif;
+}
+
+.newsletter input{
+    margin: 7px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.newsletter-thanks{
+    padding: 20px 0;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+img{
+    max-width: 100%;
+    transition: width 0.25s ease-in-out;
+}
+
+#force-with-ya{
+    text-align: center;
+    font-size:40px;
+    color: #fff;
+}
+
+.car-image-wrapper{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-image{ 
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-image-overlay{
+    background-color: rgba(0,0,0,0.1);
+
+    position: absolute;
+}
+
+
+.car-image-overlay-top{
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    box-shadow: inset 0px 14px 12px 2px black, -6px 6px 13px 3px black;
+}
+.car-image-overlay-bottom{
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    box-shadow: inset 0px -13px 12px 2px black, 1px -4px 13px 3px black;
+}
+.car-image-overlay-left{
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px;
+    box-shadow: 5px 0px 12px 2px black, inset 18px 0px 13px 3px black;
+}
+.car-image-overlay-right{
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10px;
+    box-shadow: inset -17px 0px 12px 2px black, -3px 0px 13px 3px black;
+}
+
+footer p{
+    font-family: "MontserratAudi", sans-serif;
+    font-size: 2em;
+    font-weight: 300;
+    color: white;
+    transition: color 1s ease-in-out;
+    padding: 20px 0 60px 0;
+}
+
+.employees{
+    text-align: center;
+}
+
+.employees button{
+    border: 3px solid brown;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.employees button:hover{
+    text-decoration: underline;
+}
+
+.employees-table table{
+    margin: 0 auto;
+}
+
+.employees-table th, .employees-table td{
+    color: white;
+    text-align: left;
+    padding: 5px 8px;
+    border-bottom: 1px dashed white;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #ffffff;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
