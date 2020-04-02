@@ -32,6 +32,12 @@ body{
     padding-top: 5px;
 }
 
+.logo h1 a{
+    font-family: "MontserratAudi", sans-serif;
+    font-weight: 300;
+    color: white;
+}
+
 .logo h1 .by{
     font-style: italic;
 }
@@ -120,7 +126,7 @@ body{
     }
 
     article{
-        padding: 70px 0;
+        padding: 30px 0 70px 0;
     }
     
     .audi-model{
@@ -171,6 +177,10 @@ body{
 
     article{
         padding: 20px 0;
+    }
+
+    .front-article{
+        padding: 50px 0 20px 0;
     }
     
     .audi-model{
@@ -303,6 +313,13 @@ h2{
     text-align: center;
 }
 
+.front-slogan{
+    padding: 20px 0 40px 0;
+    font-size: 1em;
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
 .check-audis-wrapper{
     min-height: 42px;
 }
@@ -330,7 +347,7 @@ p{
 
 .newsletter{
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
     color: white;
     font-size: 20px;
     font-family: Verdana;
@@ -348,6 +365,21 @@ p{
     margin: 7px 0;
     padding: 10px 15px;
     border-radius: 5px;
+    border: 2px solid #fff;
+    font-family: "MontserratAudi", serif;
+    font-weight: 700;
+    color: #000;
+}
+
+.newsletter input::placeholder {
+    font-family: "MontserratAudi", serif;
+    font-weight: 700;
+    color: rgb(95, 95, 95);
+}
+
+.newsletter input[type=submit]{
+    cursor: pointer;
+    font-weight: 700;
 }
 
 .newsletter-thanks{
@@ -358,6 +390,10 @@ p{
 img{
     max-width: 100%;
     transition: width 0.25s ease-in-out;
+}
+
+.front-car{
+    cursor: pointer;
 }
 
 #force-with-ya{

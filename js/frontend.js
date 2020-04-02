@@ -290,7 +290,7 @@ $(document).ready(function() {
     $('.check-employees').on('click',function(){
         $('.employees-table tbody').html('<tr><td class="throbber">loading</td><td><div class="loader"></div></td><td><div class="loader"></div></td></tr>');
         
-        $.ajax( "//dummy.restapiexample.com/api/v1/employees" )
+        $.ajax("//dummy.restapiexample.com/api/v1/employees")
         .done(function(data) {
             if(data.data.length){
                 let employees = data.data
