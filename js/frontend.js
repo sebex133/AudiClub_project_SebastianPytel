@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){ 
     //change copyright colors
     var actualColorIndex = 0;
-    var colors = ['red','blue','green', 'white'];
+    var colors = ['#e81a1a','#1dbd1d', '#1616d8','#ffffff'];
 
     var pInterval = setInterval(function() {
-        let footerText = document.getElementById("footer-text")
-        footerText.style.color = colors[actualColorIndex]
+        let footerText = document.getElementById("footer-text");
+        footerText.style.color = colors[actualColorIndex];
         actualColorIndex = actualColorIndex++ > 2 ? 0 : actualColorIndex;
     }, 1500);
 
@@ -224,38 +224,6 @@ document.addEventListener('DOMContentLoaded', function(){
             var forceP = document.getElementById('force-with-ya');
             forceP.innerHTML = force + '!';
         }
-
-        // var origWidth = imgObj.width;
-        // var origHeight = imgObj.height;
-        
-        // if(imgObj != undefined && !imgObj.classList.contains('animating-special')){
-        //     imgObj.classList.add('animating-special');
-        //     imgObj.style.width = origWidth+'px';
-        //     imgObj.parentNode.parentNode.style.height = origHeight+'px';
-
-        //     setTimeout(function(){
-        //         imgObj.style.width = '100px';
-        //         imgObj.parentNode.parentNode.style.justifyContent = justifyContentChanged;
-        //         imgObj.parentNode.parentNode.style.alignItems = alignItemsChanged;
-        //     }, 10);
-        //     setTimeout(function(){
-        //         imgObj.style.width = origWidth+'px';
-        //         setTimeout(function(){
-        //             imgObj.parentNode.parentNode.style.justifyContent = 'center';
-        //             imgObj.parentNode.parentNode.style.alignItems = 'center';
-        //         }, 180)
-
-        //         setTimeout(function(){
-        //             imgObj.parentNode.parentNode.style.height = 'auto';
-        //             imgObj.classList.remove('animating-special');
-
-        //             directionStartX = '_none';
-        //             directionStartY = '_none';
-        //             directionEndX = '_none';
-        //             directionEndY = '_none';
-        //         },260)
-        //     }, 250);
-        // }
     };
 
     function setAnimateAudiEventToObj(obj){
@@ -264,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function(){
         obj.addEventListener('touchstart', imageDragTouchStart, false);
         obj.addEventListener('touchmove', imageTouchMove, false);
         obj.addEventListener('touchend', imageTouchEnd, false);
-        obj.addEventListener('touchforcechange', animateAudiSpecial, false);
+        // obj.addEventListener('touchforcechange', animateAudiSpecial, false);
     }
 
     var imageInAnchors = document.getElementsByClassName("audi-image-link");
@@ -288,26 +256,43 @@ $(document).ready(function() {
     $('.check-audis').fadeIn(400);
 
     $('.check-employees').on('click',function(){
-        $('.employees-table tbody').html('<tr><td class="throbber">loading</td><td><div class="loader"></div></td><td><div class="loader"></div></td></tr>');
-        
+        $('.employees-table').html('<div class="throbber"><div class="loader"></div></div>');
+        $('.employees-table').slideDown('slow');
+
         $.ajax("//dummy.restapiexample.com/api/v1/employees")
         .done(function(data) {
             if(data.data.length){
-                let employees = data.data
-                let dataString = ''
+                let employees = data.data;
+                let dataString = '';
+                dataString += '<table><thead><th>Name and surname</th><th>Age</th><th>Salary</th></thead><tbody>';
                 for(i = 0; i < employees.length; i++){
-                    let salary = employees[i].employee_salary/100 + ' €'
-                    dataString += '<tr><td>' + employees[i].employee_name + '</td><td>' + employees[i].employee_age + '</td><td>' + salary + '</td><td>' + '</td></tr>'
+                    let salary = employees[i].employee_salary/100 + ' €';
+                    dataString += '<tr><td>' + employees[i].employee_name + '</td><td>' + employees[i].employee_age + '</td><td>' + salary + '</td></tr>';
                 }
-                $('.employees-table tbody').html(dataString);
+                dataString += '</tbody></table>';
+
+                //fake delay
+                setTimeout(function() {
+                    $('.employees-table').slideUp('fast', function(){
+                        $('.employees-table').html(dataString);
+                        $('.employees-table').slideDown('fast');
+                    });
+                }, 1200);
             }
         })
         .fail(function(data) {
-            console.log('fail loading data')
+            //fake delay
+            setTimeout(function() {
+                $('.employees-table').slideUp('fast', function(){
+                    $('.employees-table').html('<p class="failed-loading">Failed loading data...</p>');
+                    $('.employees-table').slideDown('fast');
+                });
+            }, 1200);
         })
     });
 
     $('.hamburger-wrapper button').on('click', function(){
         $(this).parent().siblings('ul').slideToggle('fast');
     });
+
 });

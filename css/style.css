@@ -139,6 +139,39 @@ body{
     .main-menu h3 a{
         font-size: 2.5em;
     }
+
+    .newsletter h3{
+        font-size: 1.5em;
+    }
+
+    .newsletter input, .newsletter input::placeholder{
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .newsletter-thanks h2{
+        font-size: 1.7em;
+    }
+    
+    .newsletter-thanks .go-back{
+        font-size: 1.7em;
+    }
+
+    footer p{
+        font-size: 2em;
+    }
+
+    .check-employees{
+        font-size: 2em;
+    }
+
+    .employees-table th, .employees-table td{
+        font-size: 1.7em;
+    }
+
+    .failed-loading{
+        font-size: 1.5em;
+    }
 }
 
 @media screen and (min-width: 1200px){
@@ -180,7 +213,7 @@ body{
     }
 
     .front-article{
-        padding: 50px 0 20px 0;
+        padding: 20px 0 20px 0;
     }
     
     .audi-model{
@@ -192,6 +225,45 @@ body{
 
     .main-menu h3 a{
         font-size: 19px;
+    }
+
+    .newsletter h3{
+        font-size: 20px;
+    }
+    
+    .newsletter input, .newsletter input::placeholder{
+        font-size: 15px;
+    }
+
+    .newsletter-thanks h2{
+        font-size: 2em;
+    }
+    
+    .newsletter-thanks .go-back{
+        font-size: 17px;
+    }
+
+    footer p, .failed-loading{
+        font-size: 20px;
+    }
+
+    .check-employees{
+        font-size: 1em;
+    }
+
+    .employees-table th, .employees-table td{
+        font-size: 15px;
+    }
+
+    .failed-loading{
+        font-size: 15px;
+    }
+
+    .front-car{
+        overflow: hidden;
+        max-height: 600px;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -313,13 +385,6 @@ h2{
     text-align: center;
 }
 
-.front-slogan{
-    padding: 20px 0 40px 0;
-    font-size: 1em;
-    font-style: italic;
-    letter-spacing: 0.1em;
-}
-
 .check-audis-wrapper{
     min-height: 42px;
 }
@@ -357,34 +422,54 @@ p{
     text-align: center;
     padding: 20px 0;
     color: white;
-    font-size: 20px;
     font-family: "MontserratAudi", serif;
+    font-weight: 300;
 }
 
 .newsletter input{
     margin: 7px 0;
-    padding: 10px 15px;
+    padding: 10px 25px;
     border-radius: 5px;
-    border: 2px solid #fff;
+    border: 2px solid rgba(255,255,255,0.5);
+    background-color: #000;
+    color: #c5c5c5;
     font-family: "MontserratAudi", serif;
     font-weight: 700;
-    color: #000;
 }
 
 .newsletter input::placeholder {
+    color: rgb(95, 95, 95);
     font-family: "MontserratAudi", serif;
     font-weight: 700;
-    color: rgb(95, 95, 95);
 }
 
 .newsletter input[type=submit]{
     cursor: pointer;
-    font-weight: 700;
 }
 
 .newsletter-thanks{
-    padding: 20px 0;
-    font-family: "Lucida Console", Monaco, monospace;
+    text-align: center;
+    padding: 15px 25px;
+    margin: 30px 0 15px 0;
+}
+
+.newsletter-thanks h2{
+    font-family: "MontserratAudi", serif;
+    font-weight: 700;
+    color: #c5c5c5;
+    background-color: #000;
+}
+
+.newsletter-thanks .go-back{
+    display: inline-block;
+    font-family: "MuliAudi", serif;
+    font-weight: 300;
+    color: #c5c5c5;
+    background-color: #000;
+    padding: 15px 25px;
+    margin: 45px 0 15px 0;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
 }
 
 img{
@@ -454,7 +539,6 @@ img{
 
 footer p{
     font-family: "MontserratAudi", sans-serif;
-    font-size: 2em;
     font-weight: 300;
     color: white;
     transition: color 1s ease-in-out;
@@ -463,32 +547,75 @@ footer p{
 
 .employees{
     text-align: center;
+    min-height: 300px;
 }
 
-.employees button{
-    border: 3px solid brown;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
+.check-employees{
     text-align: center;
-    padding: 10px 15px;
-    margin: 15px 0;
+    padding: 15px 25px;
+    margin: 30px 0 15px 0;
     cursor: pointer;
+    font-family: "MontserratAudi", serif;
+    font-weight: 700;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    color: #c5c5c5;
+    background-color: #000;
 }
 
-.employees button:hover{
-    text-decoration: underline;
+.throbber{
+    display:flex;
+    height: 250px;
+}
+
+.employees-table{
+    /* display: none; */
 }
 
 .employees-table table{
     margin: 0 auto;
 }
 
+table{
+    border-collapse: collapse;
+}
+
+.employees-table th{
+    padding:10px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+.employees-table td{
+    padding:5px 10px;
+}
+
+.employees-table tbody tr:first-child td{
+    padding-top:10px;
+}
+
 .employees-table th, .employees-table td{
-    color: white;
+    font-family: "MuliAudi", serif;
+    font-weight: 700;
+
     text-align: left;
-    padding: 5px 8px;
-    border-bottom: 1px dashed white;
+    color: #c5c5c5;
+
+    /* padding: 5px 8px; */
+    /* border-bottom: 1px solid rgba(255,255,255,0.5); */
+}
+
+.failed-loading{
+    display: inline-block;
+    text-align: center;
+    margin: 50px 0 20px 0;
+    padding: 15px 25px;
+
+    font-family: "MontserratAudi", serif;
+    font-weight: 300;
+
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 15px;
+    color: #c5c5c5;
 }
 
 .loader,
