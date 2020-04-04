@@ -352,15 +352,17 @@ a{
     cursor: pointer;
 }
 
-.hamburger-wrapper button:hover div{
-    border-bottom: 4px solid #000;
-}
-
-.hamburger-wrapper button div{
+.hamburger-wrapper button span:not(.menu-desc){
+    display: block;
     width: 60px;
     height: 20px;
     border-bottom: 4px solid #fff;
 }
+
+.hamburger-wrapper button:hover span{
+    border-bottom: 4px solid #000;
+}
+
 
 .main-menu h3 a{
     font-family: "MuliAudi", serif;
