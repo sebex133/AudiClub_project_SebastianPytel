@@ -7,11 +7,11 @@ GitHub: https://github.com/sebex133/AudiClub_project_SebastianPytel
 - podstawowe metatagi
 
 1. Top header:
-- JS - animacja pojawienia się nagłówka
+- JS jQuery - animacja pojawienia się nagłówka
 - JS - animacje logo na hoverze
 
 2. Menu:
-- responsywne - mobile "hamburger" Menu
+- JS jQuery - responsywne - mobile "hamburger" Menu
 
 3. Footer:
 - JS - animacja kolorów napisu Copyright
@@ -22,7 +22,7 @@ GitHub: https://github.com/sebex133/AudiClub_project_SebastianPytel
 
 5. Podstrony Audi:
 - obrazek z linkiem zewnętrznym - otwarcie podstrony Wikipedii w nowej karcie
-- animacja obrazka na przeciągnięcie - tak jak na frontpage'u
+- JS - animacja obrazka na przeciągnięcie - tak jak na frontpage'u
 
 6. Ingolstadt:
-- JS - AJAX'owe ładowanie fake'owych informacji o pracownikach z zewnętrznego API (example)
+- JS jQuery - AJAX'owe ładowanie fake'owych informacji o pracownikach z zewnętrznego API (example)
