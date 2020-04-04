@@ -1,4 +1,5 @@
 Audi club - projekt Technologie internetowe cz1 frontend - Sebastian Pytel 95541
+LIVE: https://hoodtrooper.com
 GitHub: https://github.com/sebex133/AudiClub_project_SebastianPytel
 
 0. Strona:
