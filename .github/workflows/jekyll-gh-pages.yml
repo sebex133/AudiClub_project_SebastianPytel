@@ -25,6 +25,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      qrCode: PUSTY_QR_CODE
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,14 +36,23 @@ jobs:
         run: echo "$PWD"
       - name: Pokaz pliki
         run: ls -la ./
-      - name: Dodaj QR code
-        env:
-          qrCode: linkDoQRwinternecie
-        run: echo "costamcostam - $qrCode" >> ./mojkodqr.txt
-      - name: Zamien QR code
-        env:
-          qrCode: linkDoQRwinternecie
-        run: echo "costamcostam - $qrCode" >> ./nowykodqr.txt
+      - name: Pokaz URL strony
+        run: echo "${{ steps.deployment.outputs.page_url }} lub ${{ steps.deploy.outputs.preview_url }}"
+      - name: Dodaj url do istniejacego txt
+        run: echo "dodaj na koniec pliku - $qrCode" >> ./mojkodqr.txt
+      - name: Nowy plik utworz
+        run: echo "nowy Plik - $qrCode" >> ./nowykodqr.txt
+      - name: Podmien variable
+        run: echo "${{ steps.deployment.outputs.page_url }}/nowykodqr.txt" >> $qrCode
+      - name: Generate QR Code
+        id: qrcode
+        uses: hammadj/qr-code-generator@master
+        with:
+          content: "$qrCode"
+      - name: Show QR code
+        run: echo ${{ steps.qrcode.output.data }}
+      - name: Put QR code to HTML file
+        run: echo "<html><head><title>QR</title></head><body><img src="${{ steps.qrcode.output.data }}"/></body></html>" >> ./finalnyQrCode.html
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
