@@ -43,12 +43,14 @@ jobs:
       - name: Nowy plik utworz
         run: echo "nowy Plik - $qrCode" >> ./nowykodqr.txt
       - name: Podmien variable
-        run: echo "${{ steps.deployment.outputs.page_url }}/nowykodqr.txt" >> $qrCode
+        run: echo "zamiana wartosci" >> $qrCode
       - name: Generate QR Code
         id: qrcode
         uses: hammadj/qr-code-generator@master
+        env:
+          qrCodeNew: https://sebex133.github.io/AudiClub_project_SebastianPytel/finalnyQrCode.html
         with:
-          content: $qrCode
+          content: $qrCodeNew
       - name: Show QR code
         run: echo ${{ steps.qrcode.output.data }}
       - name: Put QR code to HTML file
