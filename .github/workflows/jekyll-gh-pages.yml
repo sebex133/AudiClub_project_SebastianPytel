@@ -38,11 +38,11 @@ jobs:
       - name: Pokaz gdzie jestes
         run: echo "$PWD"
       - name: Pokaz pliki
-        run: ls -la
+        run: ls -la ./_site
       - name: Dodaj QR code
         env:
           qrCode: linkDoQRwinternecie
-        run: echo "costamcostam - $qrCode" >> ./site/mojkodqr.txt
+        run: echo "costamcostam - $qrCode" >> ./_site/mojkodqr.txt
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
