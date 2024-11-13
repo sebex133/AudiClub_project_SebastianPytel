@@ -37,7 +37,7 @@ jobs:
       - name: Pokaz pliki
         run: ls -la ./
       - name: Pokaz URL strony
-        run: echo "${{ steps.deployment.outputs.page_url }} lub ${{ steps.deploy.outputs.preview_url }}"
+        run: echo ${{ steps.deployment.outputs.page_url }}
       - name: Dodaj url do istniejacego txt
         run: echo "dodaj na koniec pliku - $qrCode" >> ./mojkodqr.txt
       - name: Nowy plik utworz
@@ -48,7 +48,7 @@ jobs:
         id: qrcode
         uses: hammadj/qr-code-generator@master
         with:
-          content: "$qrCode"
+          content: $qrCode
       - name: Show QR code
         run: echo ${{ steps.qrcode.output.data }}
       - name: Put QR code to HTML file
