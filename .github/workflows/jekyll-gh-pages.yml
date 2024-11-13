@@ -52,9 +52,9 @@ jobs:
         with:
           content: "$qrCodeNew"
       - name: Show QR code
-        run: echo "${{ steps.qrcode_generate.output.text }} lub ${{ steps.qrcode_generate.output.text }}"
+        run: echo "${{ steps.qrcode_generate.outputs.text }} lub ${{ steps.qrcode_generate.outputs.text }}"
       - name: Put QR code to HTML file
-        run: echo "<html><head><title>QR</title></head><body><img src=\"${{ steps.qrcode_generate.output.text }}\"/></body></html>" >> ./finalnyQrCode.html
+        run: echo "<html><head><title>QR</title></head><body><img src=\"${{ steps.qrcode_generate.outputs.data }}\"/></body></html>" >> ./finalnyQrCode.html
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
