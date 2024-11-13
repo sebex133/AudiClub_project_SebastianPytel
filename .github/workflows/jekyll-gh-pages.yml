@@ -35,6 +35,11 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Pokaz gdzie jestes
+        run: echo "$PWD"
+      - name: Pokaz pliki
+        run: ls -la
+      - name: Dodaj QR code
         env:
           qrCode: linkDoQRwinternecie
         run: echo "costamcostam - $qrCode" >> ./site/mojkodqr.txt
